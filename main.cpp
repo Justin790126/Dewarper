@@ -1,23 +1,16 @@
 
 
 #include <QCoreApplication>
-#include <dewarper.h>
 
+#include <mainwindow.h>
 
 
 int main(int argc, char* argv[]) {
-    char* src_url = "./C1ZZV_w_Marks.jpg";
+    QApplication app(argc, argv);
 
-    Mat src = imread(src_url,CV_LOAD_IMAGE_COLOR);
-    if (src.empty()) {
-        cerr << "load image failed" << endl;
-        return -1;
-    }
+    MainWindow* window = new MainWindow();
 
-    Dewarper* dewarper = Dewarper::GetInstance();
-    dewarper->SetSource(src);
-    dewarper->Dewarp();
-    dewarper->ShowResult();
+    window->show();
 
-    return 0;
+    return app.exec();
 }
