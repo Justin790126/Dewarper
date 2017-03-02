@@ -4,9 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core
-
-QT       -= gui
+QT       += core gui widgets
 
 TARGET = ProjectionDewarper
 CONFIG   += console
@@ -27,7 +25,12 @@ LIBS += -lopencv_imgcodecs
 
 
 SOURCES += main.cpp \
-    dewarper.cpp
+    dewarper.cpp \
+    mainwindow.cpp
 
 HEADERS += \
-    dewarper.h
+    dewarper.h \
+    mainwindow.h
+
+FORMS += \
+    mainwindow.ui
