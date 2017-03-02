@@ -56,29 +56,33 @@ void MainWindow::SetDewarpImageLabel()
 
 void MainWindow::on_sldPan_valueChanged(int value)
 {
-    ui->lcdPan->display(value);
-    dewarper->SetPan(value);
+    int pan = -1 * value;
+    ui->lcdPan->display(-pan);
+    dewarper->SetPan(pan);
     SetDewarpImageLabel();
 }
 
 void MainWindow::on_sldTIlt_valueChanged(int value)
 {
-    ui->lcdTilt->display(value);
-    dewarper->SetTilt(value);
+    int tilt = 1 * value;
+    ui->lcdTilt->display(tilt);
+    dewarper->SetTilt(tilt);
     SetDewarpImageLabel();
 }
 
 void MainWindow::on_sldAccuracy_valueChanged(int value)
 {
-    ui->lcdAccuracy->display(value);
-    dewarper->SetAccuracy(value);
+    int accuracy = value;
+    ui->lcdAccuracy->display(accuracy);
+    dewarper->SetAccuracy(accuracy);
     SetDewarpImageLabel();
 }
 
 void MainWindow::on_sldZoom_valueChanged(int value)
 {
-    ui->lcdZoom->display(value/10.0);
-    dewarper->SetZoom(value/10.0);
+    float zoom = value/10.0;
+    ui->lcdZoom->display(zoom);
+    dewarper->SetZoom(zoom);
     SetDewarpImageLabel();
 }
 
@@ -100,4 +104,20 @@ void MainWindow::on_btnOpen_clicked()
     } else {
         return;
     }
+}
+
+void MainWindow::on_sldFOVx_valueChanged(int value)
+{
+    float fovx = value/10.0;
+    ui->lcdFOVx->display(fovx);
+    dewarper->SetFOVx(fovx);
+    SetDewarpImageLabel();
+}
+
+void MainWindow::on_sldFOVy_valueChanged(int value)
+{
+    float fovy = value/10.0;
+    ui->lcdFOVy->display(fovy);
+    dewarper->SetFOVy(fovy);
+    SetDewarpImageLabel();
 }

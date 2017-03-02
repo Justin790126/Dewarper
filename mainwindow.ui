@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>520</height>
+    <height>640</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,13 +22,13 @@
   <property name="minimumSize">
    <size>
     <width>640</width>
-    <height>520</height>
+    <height>640</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>640</width>
-    <height>520</height>
+    <height>640</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -141,7 +141,7 @@
       <x>10</x>
       <y>330</y>
       <width>621</width>
-      <height>136</height>
+      <height>206</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gdlControls">
@@ -233,6 +233,13 @@
        </property>
       </widget>
      </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="lblAccuracy">
+       <property name="text">
+        <string>Accuracy</string>
+       </property>
+      </widget>
+     </item>
      <item row="1" column="1">
       <widget class="QSlider" name="sldTIlt">
        <property name="minimum">
@@ -256,17 +263,13 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="lblAccuracy">
-       <property name="text">
-        <string>Accuracy</string>
-       </property>
-      </widget>
-     </item>
      <item row="3" column="1">
       <widget class="QSlider" name="sldAccuracy">
        <property name="maximum">
         <number>4</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
        </property>
        <property name="value">
         <number>4</number>
@@ -298,46 +301,109 @@
        </property>
       </widget>
      </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="lblFOVx">
+       <property name="text">
+        <string>FOVx</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QLCDNumber" name="lcdFOVx">
+       <property name="segmentStyle">
+        <enum>QLCDNumber::Flat</enum>
+       </property>
+       <property name="value" stdset="0">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QSlider" name="sldFOVx">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>200</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
+       </property>
+       <property name="value">
+        <number>10</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="lblFOVy">
+       <property name="text">
+        <string>FOVy</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QSlider" name="sldFOVy">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>200</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
+       </property>
+       <property name="value">
+        <number>10</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QLCDNumber" name="lcdFOVy">
+       <property name="value" stdset="0">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="btnLoadSrc">
+   <widget class="QWidget" name="gridLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>480</y>
-      <width>141</width>
-      <height>27</height>
+      <x>10</x>
+      <y>550</y>
+      <width>461</width>
+      <height>31</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Load default image</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnDewarp">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>480</y>
-      <width>120</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Dewarp image</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnOpen">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>480</y>
-      <width>120</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Open file</string>
-    </property>
+    <layout class="QGridLayout" name="gdlButtons">
+     <item row="0" column="1">
+      <widget class="QPushButton" name="btnDewarp">
+       <property name="text">
+        <string>Dewarp image</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="btnLoadSrc">
+       <property name="text">
+        <string>Load default image</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="btnOpen">
+       <property name="text">
+        <string>Open file</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <action name="actionType_Here">

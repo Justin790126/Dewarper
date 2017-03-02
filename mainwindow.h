@@ -37,6 +37,10 @@ private slots:
 
     void on_btnOpen_clicked();
 
+    void on_sldFOVx_valueChanged(int value);
+
+    void on_sldFOVy_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
 

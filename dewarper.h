@@ -23,6 +23,8 @@ public:
     void SetZoom(float new_zoom);
     void SetTilt(float new_tilt);
     void SetAccuracy(float new_accuracy);
+    void SetFOVx(float new_fovx);
+    void SetFOVy(float new_fovy);
     void CreateMap();
     void Dewarp();
     void ShowResult();
@@ -60,6 +62,8 @@ private:
     }
 
     float pan = 0, tilt = 0, zoom = 1;
+    float fovx_ratio = 1.0;
+    float fovy_ratio = 1.1;
 
     char* dewarped_window_name = "Dewarped image";
 

@@ -54,6 +54,22 @@ void Dewarper::SetZoom(float new_zoom)
     }
 }
 
+void Dewarper::SetFOVx(float new_fovx)
+{
+    if (new_fovx != fovx_ratio) {
+       fovx_ratio = new_fovx;
+       CreateMap();
+    }
+}
+
+void Dewarper::SetFOVy(float new_fovy)
+{
+    if (new_fovy != fovy_ratio) {
+       fovy_ratio = new_fovy;
+       CreateMap();
+    }
+}
+
 void Dewarper::CreateMap()
 {
     map_x.create(dst.size(), CV_32FC1);
@@ -67,8 +83,8 @@ void Dewarper::CreateMap()
             float v = j;
 
             float fov = Thetaud(x, y);
-            float fovx = fov;
-            float fovy = fov;
+            float fovx = fovx_ratio * fov;
+            float fovy = fovy_ratio * fov;
             float radial_distance = R(x,y);
 
             u = x0 + (i - x0) * GetImageHeight(fovx, accuracy) / radial_distance;
