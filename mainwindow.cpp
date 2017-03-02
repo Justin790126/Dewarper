@@ -105,3 +105,19 @@ void MainWindow::on_btnOpen_clicked()
         return;
     }
 }
+
+void MainWindow::on_sldFOVx_valueChanged(int value)
+{
+    float fovx = value/10.0;
+    ui->lcdFOVx->display(fovx);
+    dewarper->SetFOVx(fovx);
+    SetDewarpImageLabel();
+}
+
+void MainWindow::on_sldFOVy_valueChanged(int value)
+{
+    float fovy = value/10.0;
+    ui->lcdFOVy->display(fovy);
+    dewarper->SetFOVy(fovy);
+    SetDewarpImageLabel();
+}
