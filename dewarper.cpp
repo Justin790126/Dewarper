@@ -69,7 +69,7 @@ void Dewarper::CreateMap()
             float fov = Thetaud(x, y);
             float fovx = fov;
             float fovy = fov;
-            float radial_distance = zoom * R(x,y);
+            float radial_distance = R(x,y);
 
             u = x0 + (i - x0) * GetImageHeight(fovx, accuracy) / radial_distance;
             v = y0 + (j - y0) * GetImageHeight(fovy, accuracy) / radial_distance;
@@ -84,7 +84,7 @@ void Dewarper::CreateMap()
 
 float Dewarper::Thetaud(float x, float y)
 {
-    float theta_dewarped_in_radians = std::atan(R(x, y)/f);
+    float theta_dewarped_in_radians = std::atan(R(x, y)/(zoom * f));
     return theta_dewarped_in_radians;
 }
 
